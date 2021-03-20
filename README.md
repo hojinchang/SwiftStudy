@@ -1,3 +1,3 @@
 # SwiftStudy
 
-### member : Dohyun, Seunggi, Hojin, Wochan
+### member : Dohyun, Seunggi, Hojin, Woochan
