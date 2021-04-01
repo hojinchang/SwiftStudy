@@ -18,3 +18,5 @@ struct Enemy{
     }
 }
 
+var enemy = Enemy(health: 10, attackStrengh: 10)
+print(enemy.health)

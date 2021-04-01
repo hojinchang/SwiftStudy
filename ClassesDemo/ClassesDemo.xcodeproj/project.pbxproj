@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		283497C72604980700312D58 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283497C62604980700312D58 /* main.swift */; };
-		283497CF2604986A00312D58 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283497CE2604986A00312D58 /* Enemy.swift */; };
-		283497D226049A0000312D58 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283497D126049A0000312D58 /* Dragon.swift */; };
+		28C685382608A17D00575293 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283497CE2604986A00312D58 /* Enemy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,8 +59,8 @@
 		283497C52604980700312D58 /* ClassesDemo */ = {
 			isa = PBXGroup;
 			children = (
-				283497C62604980700312D58 /* main.swift */,
 				283497CE2604986A00312D58 /* Enemy.swift */,
+				283497C62604980700312D58 /* main.swift */,
 				283497D126049A0000312D58 /* Dragon.swift */,
 			);
 			path = ClassesDemo;
@@ -125,9 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283497CF2604986A00312D58 /* Enemy.swift in Sources */,
-				283497C72604980700312D58 /* main.swift in Sources */,
-				283497D226049A0000312D58 /* Dragon.swift in Sources */,
+				28C685382608A17D00575293 /* Enemy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
