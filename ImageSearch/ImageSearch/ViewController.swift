@@ -12,14 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var textfield: UITextField!
     
-    
-    var arr = [String]()
     var imagesURL = [String]()
 
-    
     var imageManager = ImageManager()
   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -45,7 +41,6 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
             if let realdata = data {
                 cell.imageView?.image = UIImage(data: realdata)
             }
-            cell.textLabel?.text = "sitename: \(arr[indexPath.row])"
         }
         return cell
     }
@@ -55,17 +50,21 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            print(imagesURL.count)
-        default:
-            print(imagesURL[indexPath.row])
+        print(indexPath.row)
+        performSegue(withIdentifier: "ImageSegue", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ImageSegue" {
+            let destinationVC = segue.destination as! ImageViewController
+                if let index = sender as? Int {
+                    destinationVC.imageURL = imagesURL[index]
+                }
         }
     }
     
 }
 //MARK: - UITextFieldDelegate
-
 
 extension ViewController: UITextFieldDelegate {
     
@@ -78,8 +77,8 @@ extension ViewController: UITextFieldDelegate {
             return
         }
         imagesURL.removeAll()
-        arr.removeAll()
         imageManager.getjson(keyword: keyword)
+        self.tableview.reloadData()
         textfield.text = ""
     }
     
@@ -98,23 +97,19 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
-
 //MARK: - ImageManagerDelegate
 
 extension ViewController: ImageManagerDelegate{
     func didUpdateImage(_ imageManager: ImageManager, image: ImageModel) {
+        imagesURL.removeAll()
         DispatchQueue.main.async {
             self.imagesURL.append(image.imageURL)
-            self.arr.append(image.sitename)
             self.tableview.reloadData()
         }
-        
     }
     
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }
 

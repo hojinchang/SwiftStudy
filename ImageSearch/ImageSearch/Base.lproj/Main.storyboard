@@ -68,11 +68,41 @@
                     <connections>
                         <outlet property="tableview" destination="KsL-Bd-AFW" id="dJi-5q-eLe"/>
                         <outlet property="textfield" destination="yTt-3l-QJb" id="lWt-es-8PR"/>
+                        <segue destination="9tY-3s-HI2" kind="presentation" identifier="ImageSegue" id="BT7-2O-qp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="q5F-JI-Lzb">
+            <objects>
+                <viewController id="9tY-3s-HI2" customClass="ImageViewController" customModule="ImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J5C-bq-PfR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-of-Wr6">
+                                <rect key="frame" x="10" y="0.0" width="394" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q00-Os-pj3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q00-Os-pj3" firstAttribute="bottom" secondItem="QJg-of-Wr6" secondAttribute="bottom" id="6rO-Qg-m7W"/>
+                            <constraint firstItem="QJg-of-Wr6" firstAttribute="top" secondItem="Q00-Os-pj3" secondAttribute="top" id="dl4-qW-bUT"/>
+                            <constraint firstItem="QJg-of-Wr6" firstAttribute="leading" secondItem="Q00-Os-pj3" secondAttribute="leading" constant="10" id="lfa-gx-NIn"/>
+                            <constraint firstItem="Q00-Os-pj3" firstAttribute="trailing" secondItem="QJg-of-Wr6" secondAttribute="trailing" constant="10" id="wQg-xA-yUc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageview" destination="QJg-of-Wr6" id="FXg-5Z-MrV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Se-iq-SEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="105"/>
         </scene>
     </scenes>
     <resources>
