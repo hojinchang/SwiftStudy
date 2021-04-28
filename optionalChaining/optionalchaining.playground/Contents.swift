@@ -85,13 +85,13 @@ dohyun?.home?.guardian?.name
 
 dohyun?.home?.guardian?.job
 dohyun?.home?.guardian?.job = "대장"
-
+print(dohyun?.home?.guardian?.job)
 
 //MARK: - nil coalescing
 
 // nil 병합 연산자
 // 중위 연산자
-// optional ?? value
+// optional ?? default value
 // 옵셔널 값이 nil일 경우, 우측의 값을 반환
 // 띄어쓰기 주의 필요
 
@@ -128,7 +128,7 @@ struct BMI {
     let color: String
 }
 
-struct bmical {
+struct bmicalculator {
     var bmi: BMI?
     
     func getBMIValue()->String{
